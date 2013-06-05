@@ -8,7 +8,7 @@ chrome.webRequest.onBeforeRequest.addListener(
         var results = pattern.exec(details.url);
         if(results)
         {
-            //Redirect to the new forum base url + the forum ID
+            //Redirect to the new forum base url + the post ID
             return {redirectUrl: viewtext_base_url + results[1]};
         }
     },
