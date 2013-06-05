@@ -32,7 +32,7 @@ The only thing the extension does is check for old URLs and rewrite them to the 
 Installation
 -----------
 
-Donwload, fork or clone de repository, you will get an SRC folder with the source code of the extension (fell free to update, optimize or fix and make a pull request)
+Donwload, fork or clone de repository, you will get an SRC folder with the source code of the extension (feel free to update, optimize or fix, and pull request are welcome)
 
 You can use de developer mode for Chrome Extension and import the SRC files.
 
