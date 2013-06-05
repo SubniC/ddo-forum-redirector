@@ -1,19 +1,21 @@
 {
   "name": "DDO Forum URL Redirect",
-  "version": "0.1",
+  "version": "0.2",
   "description": "Fix DDO Forums URLs.",
   "icons": { "16": "ddo16.png",
 			 "48": "ddo48.png",
 			 "128": "ddo128.png" },
   "background": { 
-     "page":"bg.html"
+     "scripts":["background.js"]
      },
-   "manifest_version": 2,
-   "content_scripts": [
-   {
-     "matches": ["http://*/*", "https://*/*"],
-     "js": ["content.js"]
-   }
-   ],
-  "permissions": ["tabs"]
+  "manifest_version": 2,
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "webNavigation",
+    "management",
+    "http://*/*",
+    "https://*/*"
+  ]
 }
