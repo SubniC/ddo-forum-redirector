@@ -1,6 +1,8 @@
 DDO Forum Redirector
 ====================
 
+**Current version:** 0.3 (07/06/2013)
+
 Overview
 --------
 
@@ -23,9 +25,18 @@ When you try to access one of the old DDO Forums URLs like:
 - http://forums.ddo.com/showthread.php?t=193439
 - http://www.ddo.com/en/showthread.php?t=413296
 
+or
+
+- http://forums.ddo.com/showthread.php?p=3850862
+- http://forums.ddo.com/showpost.php?p=3850862
+
 You will get a 404 error, the equivalent brand new URLs looks like:
 
 - http://ddo.com/forums/showthread.php/193439
+
+or
+
+- http://ddo.com/forums/showthread.php/?p=3850862
 
 The only thing the extension does is check for old URLs and rewrite them to the new ones avoiding the dirty and annoying 404 error.
 

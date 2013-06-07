@@ -1,5 +1,11 @@
 ## DDO Forum Redirector CHANGELOG
 
+#### v0.3 (07/06/2013)
+
+- [IMPROVEMENT] Added new urls to the redirector
+ - http://forums.ddo.com/showthread.php?p=3850862
+ - http://forums.ddo.com/showpost.php?p=3850862
+
 #### v0.2 (05/06/2013)
 
 - [IMPROVEMENT] Improved redirection timing and user experience
