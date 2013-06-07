@@ -1,6 +1,6 @@
 {
   "name": "DDO Forum URL Redirect",
-  "version": "0.2",
+  "version": "0.3",
   "description": "Fix DDO Forums URLs.",
   "homepage_url": "https://github.com/SubniC/ddo-forum-redirector",
   "icons": { "16": "ddo16.png",
