@@ -48,3 +48,5 @@ Donwload, fork or clone de repository, you will get an SRC folder with the sourc
 You can use de developer mode for Chrome Extension and import the SRC files.
 
 Alternatively you can use the CRX file to add the extension to Chrome, be aware that Chrome will warn you that the extension was not coming from the Chrome Store.
+
+Visual guide for CRX extensión installation found here: http://www.howtogeek.com/120743/how-...ome-web-store/
