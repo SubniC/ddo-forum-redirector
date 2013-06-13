@@ -6,7 +6,7 @@ DDO Forum Redirector
 Overview
 --------
 
-In April 2013 Turbine decide to update the DDO Forums as they change the old forums with the new ones they change the post access URLs, but they forget to rewrite the old URLs to the new ones.
+On April 2013 Turbine decide to update the DDO Forums as they change the old forums with the new ones they change the post access URLs, but they forget to rewrite the old URLs to the new ones.
 
 That lack of attention have mainly two drawbacks:
 
