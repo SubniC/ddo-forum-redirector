@@ -1,52 +1,66 @@
-DDO Forum Redirector
-====================
+# DDO Forum Redirector
 
-**Current version:** 0.3 (07/06/2013)
+A Chrome extension that rewrote **old DDO (Dungeons & Dragons Online) forum URLs**
+to their new equivalents, so stale links and bookmarks no longer returned a 404.
 
-Overview
---------
+> **Legacy project (2013).** A Chrome extension kept for reference; the target forum
+> may no longer exist. Docs refreshed in 2026, behavior unchanged.
 
-On April 2013 Turbine decide to update the DDO Forums as they change the old forums with the new ones they change the post access URLs, but they forget to rewrite the old URLs to the new ones.
+## Background
 
-That lack of attention have mainly two drawbacks:
+In April 2013, Turbine migrated the DDO Forums to a new platform and changed the
+post URLs, but the old URLs were never rewritten to the new ones. The result:
 
-1. In a couple of weeks they lost all the search engine index (and page-rank) associated to the forums.
-2. All the bookmarks users had to the forums are now broken giving them 404 errors.
+1. Search engines lost their index (and page-rank) for the forums.
+2. Every existing bookmark to a forum thread or post broke with a 404 error.
 
-The first (and biggest) problem is out of the scope of this extension and can only be fixed by the DDO development team.
+The first problem could only be fixed by the DDO team. The second is what this
+extension solved: it transparently redirected the old URLs to the new ones.
 
-The second problem is the reason this extension was created, it allows to automatically redirect the old URLs to the new ones in a transparent way.
+## How it works
 
-How it works?
--------------
+When you opened one of the old forum URLs, for example:
 
-When you try to access one of the old DDO Forums URLs like:
+- `http://forums.ddo.com/showthread.php?t=193439`
+- `http://www.ddo.com/en/showthread.php?t=413296`
+- `http://forums.ddo.com/showthread.php?p=3850862`
+- `http://forums.ddo.com/showpost.php?p=3850862`
 
-- http://forums.ddo.com/showthread.php?t=193439
-- http://www.ddo.com/en/showthread.php?t=413296
+you got a 404. The equivalent new URLs looked like:
 
-or
+- `http://ddo.com/forums/showthread.php/193439`
+- `http://ddo.com/forums/showthread.php/?p=3850862`
 
-- http://forums.ddo.com/showthread.php?p=3850862
-- http://forums.ddo.com/showpost.php?p=3850862
+The extension watched requests to `ddo.com`, matched the old URL patterns with a
+couple of regular expressions, and redirected the browser to the new URL **before**
+the broken page was even loaded.
 
-You will get a 404 error, the equivalent brand new URLs looks like:
+## Installation
 
-- http://ddo.com/forums/showthread.php/193439
+This is an unpacked Chrome extension. To load it:
 
-or
+1. Open `chrome://extensions` in Chrome.
+2. Enable **Developer mode** (toggle, top right).
+3. Click **Load unpacked** and select the `src/` folder.
 
-- http://ddo.com/forums/showthread.php/?p=3850862
+The extension uses the Manifest V2 `webRequest` blocking API, which modern Chrome
+versions have since deprecated, so loading it today is mostly of historical interest.
 
-The only thing the extension does is check for old URLs and rewrite them to the new ones avoiding the dirty and annoying 404 error.
+## Structure
 
-Installation
------------
+```
+src/
+  manifest.json    Extension manifest (Manifest V2)
+  background.js    URL matching and redirect logic
+  ddo16.png        Icons
+  ddo48.png
+  ddo128.png
+```
 
-Donwload, fork or clone de repository, you will get an SRC folder with the source code of the extension (feel free to update, optimize or fix, and pull request are welcome)
+## License
 
-You can use de developer mode for Chrome Extension and import the SRC files.
+[MIT](LICENSE) © 2013–2026 mdps
 
-Alternatively you can use the CRX file to add the extension to Chrome, be aware that Chrome will warn you that the extension was not coming from the Chrome Store.
+---
 
-Visual guide for CRX extensión installation found here: http://www.howtogeek.com/120743/how-...ome-web-store/
+_Un proyecto de mdps · 2026 · desarrollado en Murcia._

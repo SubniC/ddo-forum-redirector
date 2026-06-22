@@ -1,28 +1,26 @@
-//Declare the regexps and new forum base url
+// Old DDO forum URL patterns and the new forum base URL.
 var pattern_t=/(?:https?:\/\/)?(?:(?:www\.|forums\.)?ddo\.com(?:\/[a-z]{2})?)\/showthread\.php\?t=([0-9]+)/img;
 var pattern_p = /(?:https?:\/\/)?(?:(?:www\.|forums\.)?ddo\.com(?:\/[a-z]{2})?)\/show(?:thread|post)\.php\?p=([0-9]+)/img;
 var new_url = "http://ddo.com/forums/showthread.php/";
 
-//Add the event listener
+// Redirect old forum URLs to the new ones before the request is sent.
 chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
-        
-        //Try to match the url with the first regexp
+
+        // Match by thread id (?t=...).
         var results = pattern_t.exec(details.url);
         if(results)
         {
-            //Redirect to the new forum base url + the post ID
             return {redirectUrl: new_url + results[1]};
         }
-        
-        //If the url did not match the first regexp we try with the second one
+
+        // Match by post id (?p=...).
         var results = pattern_p.exec(details.url);
         if(results)
         {
-            //Redirect to the new forum base url + the post ID
             return {redirectUrl: new_url + '?p=' + results[1]};
         }
-        
+
     },
     {
         urls: [

@@ -1,5 +1,12 @@
 ## DDO Forum Redirector CHANGELOG
 
+## [1.0.0] - 2026-06-22
+
+- Documentation refresh (rewritten README, this entry).
+- Added MIT license.
+- Removed the built `.crx` package from version control (now git-ignored).
+- Light comment cleanup in the source; extension behavior unchanged.
+
 #### v0.3 (07/06/2013)
 
 - [IMPROVEMENT] Added new urls to the redirector
